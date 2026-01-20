@@ -1,7 +1,8 @@
 {
   "domain": "whatsapp_control",
   "name": "WhatsApp Control",
-  "documentation": "https://github.com/yourusername/whatsapp-control",
+  "documentation": "https://github.com/volski/whatsapp-control",
+  "issue_tracker": "https://github.com/volski/whatsapp-control/issues",
   "requirements": [
     "webwhatsapi==2.0.5",
     "qrcode==7.4.2",
@@ -12,9 +13,8 @@
     "voluptuous==0.13.1"
   ],
   "dependencies": [],
-  "codeowners": ["@yourusername"],
+  "codeowners": ["volski"],
   "config_flow": false,
   "version": "1.0.0",
-  "iot_class": "local_push",
-  "issue_tracker": "https://github.com/yourusername/whatsapp-control/issues"
+  "iot_class": "local_push"
 }

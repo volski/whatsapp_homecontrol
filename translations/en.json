@@ -1,0 +1,34 @@
+{
+  "config": {
+    "title": "WhatsApp Control",
+    "step": {
+      "user": {
+        "title": "WhatsApp Control Setup",
+        "description": "Set up WhatsApp Control for Home Assistant",
+        "data": {
+          "group_name": "WhatsApp Group Name",
+          "openai_api_key": "OpenAI API Key (optional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to WhatsApp",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Integration is already configured"
+    }
+  },
+  "services": {
+    "send_message": {
+      "name": "Send Message",
+      "description": "Send a message to WhatsApp group",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Message text to send"
+        }
+      }
+    }
+  }
+}
