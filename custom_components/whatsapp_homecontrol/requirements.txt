@@ -1,4 +1,4 @@
-# File: custom_components/whatsapp_control/requirements.txt
+# File: custom_components/whatsapp_homecontrol/requirements.txt
 # Python dependencies for WhatsApp Control integration
 
 # WhatsApp client library

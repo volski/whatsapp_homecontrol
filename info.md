@@ -17,7 +17,7 @@ Control your Home Assistant via WhatsApp messages!
 2. Install system dependencies (see documentation)
 3. Add to configuration.yaml:
 ```yaml
-whatsapp_control:
+whatsapp_homecontrol:
   group_name: "homecontrol"
   openai_api_key: "sk-xxx"  # Optional
 ```

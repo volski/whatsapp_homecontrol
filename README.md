@@ -35,7 +35,7 @@ Control your Home Assistant through WhatsApp messages - no Business account need
 
 ### Manual Installation
 
-1. Copy `custom_components/whatsapp_control` to your `config/custom_components/` directory
+1. Copy `custom_components/whatsapp_homecontrol` to your `config/custom_components/` directory
 2. Install system dependencies (see below)
 3. Restart Home Assistant
 
@@ -66,7 +66,7 @@ sudo apt-get install -y chromium-browser chromium-chromedriver
 
 Add to your `configuration.yaml`:
 ```yaml
-whatsapp_control:
+whatsapp_homecontrol:
   group_name: "homecontrol"  # Your WhatsApp group name
   openai_api_key: !secret openai_key  # Optional: for voice transcription
 ```

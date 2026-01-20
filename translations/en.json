@@ -1,10 +1,10 @@
 {
   "config": {
-    "title": "WhatsApp Control",
+    "title": "WhatsApp HomeControl",
     "step": {
       "user": {
-        "title": "WhatsApp Control Setup",
-        "description": "Set up WhatsApp Control for Home Assistant",
+        "title": "WhatsApp HomeControl Setup",
+        "description": "Set up WhatsApp HomeControl for Home Assistant",
         "data": {
           "group_name": "WhatsApp Group Name",
           "openai_api_key": "OpenAI API Key (optional)"

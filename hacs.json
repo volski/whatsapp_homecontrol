@@ -1,7 +1,7 @@
 {
   "name": "WhatsApp Control",
   "render_readme": true,
-  "domains": ["whatsapp_control"],
+  "domains": ["whatsapp_homecontrol"],
   "iot_class": "Local Push",
   "homeassistant": "2023.1.0"
 }

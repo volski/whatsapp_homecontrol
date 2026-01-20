@@ -2,7 +2,7 @@
 WhatsApp Web Integration for Home Assistant - Pure Python
 Single component that does everything!
 
-File: custom_components/whatsapp_control/__init__.py
+File: custom_components/whatsapp_homecontrol/__init__.py
 """
 
 import asyncio
@@ -26,7 +26,7 @@ except ImportError:
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = "whatsapp_control"
+DOMAIN = "whatsapp_homecontrol"
 CONF_GROUP_NAME = "group_name"
 CONF_PHONE = "phone"
 CONF_OPENAI_KEY = "openai_api_key"
