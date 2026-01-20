@@ -1,8 +1,8 @@
 # WhatsApp Control for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub Release](https://img.shields.io/github/release/volski/whatsapp-control.svg)](https://github.com/volski/whatsapp-control/releases)
-[![License](https://img.shields.io/github/license/volski/whatsapp-control.svg)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/release/volski/whatsapp_homecontrol.svg)](https://github.com/volski/whatsapp_homecontrol/releases)
+[![License](https://img.shields.io/github/license/volski/whatsapp_homecontrol.svg)](LICENSE)
 
 Control your Home Assistant through WhatsApp messages - no Business account needed!
 
@@ -28,7 +28,7 @@ Control your Home Assistant through WhatsApp messages - no Business account need
 1. Open HACS in Home Assistant
 2. Go to "Integrations"
 3. Click the three dots in top right → "Custom repositories"
-4. Add: `https://github.com/volski/whatsapp-control`
+4. Add: `https://github.com/volski/whatsapp_homecontrol`
 5. Category: Integration
 6. Click "Install"
 7. Restart Home Assistant

@@ -37,4 +37,4 @@ Send messages to your WhatsApp group:
 
 ## Documentation
 
-Full documentation: [GitHub Repository](https://github.com/volski/whatsapp-control)
+Full documentation: [GitHub Repository](https://github.com/volski/whatsapp_homecontrol)

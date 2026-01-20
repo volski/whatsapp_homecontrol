@@ -1,8 +1,8 @@
 {
-  "domain": "whatsapp_control",
-  "name": "WhatsApp Control",
-  "documentation": "https://github.com/volski/whatsapp-control",
-  "issue_tracker": "https://github.com/volski/whatsapp-control/issues",
+  "domain": "whatsapp_homecontrol",
+  "name": "WhatsApp HomeControl",
+  "documentation": "https://github.com/volski/whatsapp_homecontrol",
+  "issue_tracker": "https://github.com/volski/whatsapp_homecontrol/issues",
   "requirements": [
     "webwhatsapi==2.0.5",
     "qrcode==7.4.2",
@@ -15,6 +15,6 @@
   "dependencies": [],
   "codeowners": ["volski"],
   "config_flow": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "iot_class": "local_push"
 }
