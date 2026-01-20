@@ -4,17 +4,12 @@
   "documentation": "https://github.com/volski/whatsapp_homecontrol",
   "issue_tracker": "https://github.com/volski/whatsapp_homecontrol/issues",
   "requirements": [
-    "webwhatsapi==2.0.5",
-    "qrcode==7.4.2",
-    "Pillow==10.1.0",
-    "selenium==4.15.2",
-    "aiofiles==23.2.1",
-    "pydub==0.25.1",
-    "voluptuous==0.13.1"
+    "qrcode>=7.3.1",
+    "selenium>=4.0.0"
   ],
   "dependencies": [],
   "codeowners": ["volski"],
   "config_flow": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "iot_class": "local_push"
 }

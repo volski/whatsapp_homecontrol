@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp-homecontrol-bridge",
+  "version": "1.0.0",
+  "description": "WhatsApp to Home Assistant Bridge - No URL exposure required",
+  "main": "whatsapp_bridge.js",
+  "scripts": {
+    "start": "node whatsapp_bridge.js",
+    "docker": "docker-compose up -d",
+    "logs": "docker-compose logs -f whatsapp-bridge"
+  },
+  "keywords": [
+    "whatsapp",
+    "home-assistant",
+    "mqtt",
+    "bridge"
+  ],
+  "author": "volski",
+  "license": "MIT",
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "mqtt": "^5.3.0"
+  }
+}

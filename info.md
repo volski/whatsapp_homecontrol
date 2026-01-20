@@ -1,31 +1,45 @@
 # WhatsApp Control Integration
 
-Control your Home Assistant via WhatsApp messages!
+Control your Home Assistant via WhatsApp messages - **no URL exposure required!**
 
 ## Features
 
 - ✅ Control devices via text messages
-- ✅ Voice message support (optional)
+- ✅ **Fully local** - no external services needed
+- ✅ **No URL exposure** - uses MQTT bridge
+- ✅ Two-way messaging
 - ✅ No WhatsApp Business account needed
 - ✅ Works with regular WhatsApp
-- ✅ Pure Python - runs locally
 - ✅ Send notifications to WhatsApp
 
-## Setup
+## Quick Setup (Local Bridge)
 
 1. Install via HACS
-2. Install system dependencies (see documentation)
-3. Add to configuration.yaml:
+2. Install the WhatsApp bridge (choose one):
+   - **Docker** (easiest): `docker-compose up -d`
+   - **Node.js**: `npm install && npm start`
+3. Scan QR code when prompted
+4. Create WhatsApp group named "homecontrol"
+5. Configure MQTT in Home Assistant:
+
 ```yaml
-whatsapp_homecontrol:
-  group_name: "homecontrol"
-  openai_api_key: "sk-xxx"  # Optional
+mqtt:
+  sensor:
+    - name: "WhatsApp Message"
+      state_topic: "whatsapp/message/in"
+      value_template: "{{ value_json.body }}"
 ```
 
-4. Restart Home Assistant
-5. Scan QR code from logs
-6. Create WhatsApp group named "homecontrol"
-7. Start controlling your home!
+6. Send messages via MQTT:
+```yaml
+automation:
+  - alias: "WhatsApp Notification"
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "whatsapp/message/out"
+          payload: '{"message": "Hello from Home Assistant!"}'
+```
 
 ## Usage
 

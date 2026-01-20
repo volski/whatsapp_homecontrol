@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  whatsapp-bridge:
+    build: .
+    container_name: whatsapp-bridge
+    restart: unless-stopped
+    environment:
+      - MQTT_BROKER=mqtt://homeassistant.local:1883
+      - MQTT_USERNAME=
+      - MQTT_PASSWORD=
+      - GROUP_NAME=homecontrol
+    volumes:
+      - ./whatsapp-data:/app/.wwebjs_auth
+      - ./whatsapp-cache:/app/.wwebjs_cache
+    network_mode: host
+    
+  # Optional: Run your own MQTT broker if you don't have one
+  # mosquitto:
+  #   image: eclipse-mosquitto:latest
+  #   container_name: mosquitto
+  #   restart: unless-stopped
+  #   ports:
+  #     - "1883:1883"
+  #     - "9001:9001"
+  #   volumes:
+  #     - ./mosquitto/config:/mosquitto/config
+  #     - ./mosquitto/data:/mosquitto/data
+  #     - ./mosquitto/log:/mosquitto/log

@@ -18,11 +18,10 @@ from homeassistant.core import HomeAssistant, ServiceCall
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.event import async_track_time_interval
 
-# Import whatsapp-web.py library
-try:
-    from whatsapp import WhatsApp
-except ImportError:
-    WhatsApp = None
+# WhatsApp library is not included due to compatibility issues
+# Users must implement their own WhatsApp backend
+# See README.md for integration options (CallMeBot, Twilio, etc.)
+WhatsApp = None
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -50,12 +49,11 @@ CONFIG_SCHEMA = vol.Schema(
 async def async_setup(hass: HomeAssistant, config: dict):
     """Set up the WhatsApp Control component."""
 
-    if WhatsApp is None:
-        _LOGGER.error(
-            "whatsapp-web.py library not found. "
-            "Install with: pip install whatsapp-web.py"
-        )
-        return False
+    _LOGGER.warning(
+        "WhatsApp HomeControl loaded. "
+        "Please configure your WhatsApp backend (CallMeBot, Twilio, or custom). "
+        "See documentation: https://github.com/volski/whatsapp_homecontrol"
+    )
 
     if DOMAIN not in config:
         return True
@@ -111,33 +109,18 @@ class WhatsAppHandler:
 
     def _setup_whatsapp(self):
         """Setup WhatsApp client (blocking)."""
-        from whatsapp import WhatsApp
-
-        # Initialize client
-        self.wa_client = WhatsApp(
-            session=self.session_path,
-            phone=self.phone
+        _LOGGER.info(
+            "WhatsApp backend not configured. "
+            "This integration provides the framework for WhatsApp control. "
+            "You need to implement one of the following backends:\n"
+            "1. CallMeBot API (easiest, no installation)\n"
+            "2. Twilio WhatsApp API (reliable, paid service)\n"
+            "3. Custom webhook integration\n"
+            "See: https://github.com/volski/whatsapp_homecontrol"
         )
-
-        # Set up QR code callback
-        def on_qr(qr_code):
-            _LOGGER.info("Scan QR code to authenticate WhatsApp:")
-            _LOGGER.info(f"QR Code: {qr_code}")
-            # You can also save QR as image for easier scanning
-            self._save_qr_code(qr_code)
-
-        # Set up message callback
-        def on_message(message):
-            self.hass.add_job(self._handle_message_sync(message))
-
-        self.wa_client.on_qr = on_qr
-        self.wa_client.on_message = on_message
-
-        # Start client
-        self.wa_client.start()
-
-        # Find group
-        self._find_group()
+        # Stub implementation - users should extend this
+        self.wa_client = None
+        self.group_id = None
 
     def _save_qr_code(self, qr_data):
         """Save QR code as image."""
